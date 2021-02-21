@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			// });
 		// });
 
-		$('.additional-section .legend-list .item').on('mouseenter focus', function(e){
+		$('.additional-section .legend-list .item').on('click focus', function(e){
 			let left = $(this).data('x') + '%';
 			let top = $(this).data('y') + '%';
 
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			}, 300);
 		});
 
-		$('.additional-section .legend-list .item').eq(0).trigger('mouseenter');
+		$('.additional-section .legend-list .item').eq(0).trigger('click');
 
 		// Legend
 		if ($(window).width() <= 991) {

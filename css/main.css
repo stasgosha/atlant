@@ -1960,7 +1960,8 @@ body {
     align-items: center;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
-    transition: all 0.3s; }
+    transition: all 0.3s;
+    cursor: pointer; }
     .legend-list .item .item-number {
       width: 50px;
       height: 50px;
@@ -2736,21 +2737,24 @@ body {
           background: #fff;
           -webkit-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
           box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-          color: #212121; }
+          color: #212121;
+          pointer-events: none; }
           .how-we-work-component .steps-list .item.current ~ .item .item-caption {
             color: #92ca0c; }
           .how-we-work-component .steps-list .item.current ~ .item:hover, .how-we-work-component .steps-list .item.current ~ .item:focus {
             background: rgba(96, 178, 81, 0.2) !important; }
         @media screen and (min-width: 576px) {
-          .how-we-work-component .steps-list .item.current + .item:not(:hover):not(:focus) {
-            -webkit-animation: blink 4s infinite;
-            animation: blink 4s infinite; }
-            .how-we-work-component .steps-list .item.current + .item:not(:hover):not(:focus) .item-caption {
-              -webkit-animation: blink-caption 4s infinite;
-              animation: blink-caption 4s infinite;
-              -webkit-transition: all 0.3s;
-              -o-transition: all 0.3s;
-              transition: all 0.3s; }
+          .how-we-work-component .steps-list .item.current + .item {
+            pointer-events: auto; }
+            .how-we-work-component .steps-list .item.current + .item:not(:hover):not(:focus) {
+              -webkit-animation: blink 4s infinite;
+              animation: blink 4s infinite; }
+              .how-we-work-component .steps-list .item.current + .item:not(:hover):not(:focus) .item-caption {
+                -webkit-animation: blink-caption 4s infinite;
+                animation: blink-caption 4s infinite;
+                -webkit-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s; }
           @-webkit-keyframes blink {
             50% {
               background: #60b251;

@@ -64,6 +64,7 @@
 					background: #fff;
 					box-shadow: $shadow;
 					color: $text-color;
+					pointer-events: none;
 
 					.item-caption{
 						color: $primary;
@@ -77,6 +78,8 @@
 
 				@media screen and (min-width: 576px){
 					+ .item{
+						pointer-events: auto;
+
 						&:not(:hover):not(:focus){
 							animation: blink 4s infinite;
 
