@@ -1,0 +1,99 @@
+.have-questions-section{
+	padding: 75px 0;
+}
+
+.have-question-block{
+	border-radius: $r;
+	padding: 25px 50px 25px 35px;
+	background: url(../img/backgrounds/wood-bg.jpg) no-repeat center center / cover;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: 0 14px 32px rgba(#000, .32);
+	position: relative;
+
+	&:before{
+		content: '';
+		display: block;
+		width: calc(100% - 4px * 2);
+		height: calc(100% - 4px * 2);
+		position: absolute;
+		left: 4px;
+		top: 4px;
+		border-radius: 3px;
+		background: linear-gradient(to bottom, transparent, rgba(#fff, .2));
+		pointer-events: none;
+	}
+
+	.block-image{
+		flex: none;
+		margin: -93px 45px -110px 0;
+		align-self: stretch;
+		position: relative;
+
+		img{
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	.block-text{
+		font-size: 22px;
+		line-height: 1.36;
+		font-family: $second-font;
+		font-weight: 600;
+		color: #fff;
+		max-width: 430px;
+		position: relative;
+
+		strong{
+			font-weight: inherit;
+			color: $primary;
+		}
+	}
+
+	.block-button{
+		width: 235px;
+		position: relative;
+	}
+
+	@media screen and (max-width: 1229px){
+		.block-mobile-button{
+			margin-top: 30px;
+		}
+
+		.block-image{
+			margin-right: 0;
+		}
+	}
+
+	@media screen and (max-width: 991px){
+		.block-text{
+			width: 360px;
+			max-width: 100%;
+			flex: none;
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		flex-direction: column-reverse;
+		align-items: center;
+		text-align: center;
+
+		.block-image{
+			margin-bottom: 30px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		padding-left: 20px;
+		padding-right: 20px;
+
+		.block-text{
+			font-size: 18px;
+		}
+	}
+}

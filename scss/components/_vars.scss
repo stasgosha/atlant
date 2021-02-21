@@ -1,0 +1,25 @@
+// Fonts
+$main-font: 'Open Sans', Arial, sans-serif;
+$second-font: 'Raleway', $main-font;
+$third-font: 'PF Agora Slab Pro', $main-font;
+
+// Colors
+$green: #92ca0c;
+
+$gray: #212121;
+$dark: #212121;
+$light: #9b9b9b;
+
+$text-color: $gray;
+$text-dark: $dark;
+$text-light: $light;
+
+$primary: $green;
+$accent: $green;
+
+// Params
+$body-bg: #fff; // site background
+$t: .3s; // animation duration
+$r: 5px; // default border radius
+$shadow: 0 8px 25px rgba(#000, .15); // default card shadow
+$gradient: linear-gradient(to bottom, #deb986, #d9aa6d 100%)

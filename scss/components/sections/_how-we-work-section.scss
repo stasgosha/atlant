@@ -1,0 +1,524 @@
+.how-we-work-section{
+	padding: 75px 0 120px;
+
+	.section-caption{
+		margin-bottom: 45px;
+	}
+
+	@media screen and (max-width: 991px){
+		padding-bottom: 50px;
+	}
+
+	@media screen and (max-width: 575px){
+		padding-top: 0;
+	}
+}
+
+.how-we-work-component{
+	display: grid;
+	grid-template-columns: 370px 1fr;
+	grid-gap: 30px;
+
+	.steps-list{
+		display: grid;
+		grid-gap: 6px;
+
+		.item{
+			border-radius: $r;
+			background: #60b251;
+			color: #fff;
+			padding: 15px 25px;
+			cursor: pointer;
+			font-size: 14px;
+			transition: background $t;
+			position: relative;
+			text-align: left;
+			display: flex;
+			flex-direction: column;
+
+			.item-caption{
+				@include h4;
+				margin-bottom: 10px;
+				transition: all $t;
+			}
+
+			p{
+				// transition: color $t;
+			}
+
+			&:hover,
+			&:focus{
+				outline: none;
+				background: darken(#60b251, 5%) !important;
+				z-index: 5 !important;
+			}
+
+			&:focus-visible{
+				outline: unset;
+			}
+
+			&.current{
+				background: darken(#60b251, 5%);
+
+				~ .item{
+					background: #fff;
+					box-shadow: $shadow;
+					color: $text-color;
+
+					.item-caption{
+						color: $primary;
+					}
+
+					&:hover,
+					&:focus{
+						background: rgba(#60b251, .2) !important;
+					}
+				}
+
+				@media screen and (min-width: 576px){
+					+ .item{
+						&:not(:hover):not(:focus){
+							animation: blink 4s infinite;
+
+							.item-caption{
+								animation: blink-caption 4s infinite;
+								transition: all $t;
+							}
+						}
+
+						@keyframes blink{
+							50%{
+								background: #60b251;
+								color: #fff;
+							}
+						}
+
+						@keyframes blink-caption{
+							50%{
+								color: #fff;
+							}
+						}
+					}
+				}
+			}
+
+			@media screen and (max-width: 575px){
+				background: #60b251 !important;
+				color: #fff !important;
+				margin: 0 4px;
+				box-shadow: unset !important;
+
+				.item-caption{
+					color: #fff !important;
+				}
+
+				&:hover,
+				&:focus{
+					background: #60b251 !important;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 1299px){
+		grid-template-columns: 100%;
+		align-items: center;
+
+		.steps-list{
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@media screen and (max-width: 991px){
+		.cmp-right{
+			position: relative;
+
+			.shelves{
+				width: 100vw;
+				margin-left: calc((100vw - 100%) / -2);
+				margin-right: calc((100vw - 100%) / -2);
+			}
+		}
+
+		.steps-list{
+			.item{
+				padding-left: 20px;
+				padding-right: 20px;
+
+				br{
+					display: none;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		.steps-list{
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		.steps-list{
+			grid-template-columns: 1fr;
+		}
+
+		.cmp-right{
+			padding-top: 20px;
+		}
+	}
+}
+
+.shelves{
+	position: relative;
+	background: url(../img/backgrounds/shelves.jpg) no-repeat center center / contain;
+	max-width: 788px;
+	width: calc(100% + 18px);
+	margin-right: -18px;
+
+	&:before{
+		content: '';
+		display: block;
+		padding-top: 91.37%;
+	}
+
+	.row{
+		position: absolute;
+		display: flex;
+		align-items: flex-end;
+
+		.item{
+			transition: all .4s;
+			opacity: 0;
+			transform: translateY(-5px);
+
+			&.visible{
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		&.row-1{
+			bottom: 76.1111%;
+			left: 4.5685%;
+
+			.item{
+				&:nth-child(2){
+					margin-left: 10px;
+				}
+
+				&:nth-child(3){
+					margin-left: -13px;
+				}
+
+				&:nth-child(4){
+					margin-left: 4px;
+				}
+
+				&:nth-child(5){
+					margin-left: -10px;
+				}
+
+				&:nth-child(6){
+					margin-left: -34px;
+				}
+			}
+		}
+
+		&.row-2{
+			bottom: 55.4167%;
+			left: 5.0761%;
+
+			.item{
+				&:nth-child(2){
+					margin-left: -51px;
+				}
+
+				&:nth-child(3){
+					margin-left: -5px;
+				}
+
+				&:nth-child(4){
+					margin-left: -3px;
+				}
+
+				&:nth-child(5){
+					margin-left: -5px;
+				}
+
+				&:nth-child(6){
+					margin-left: -4px;
+				}
+			}
+		}
+
+		&.row-3{
+			bottom: 34.2%;
+			left: 6.8528%;
+
+			.item{
+				&:nth-child(1){
+					margin-left: -15px;
+				}
+
+				&:nth-child(2){
+					margin-left: -10px;
+				}
+
+				&:nth-child(3){
+					margin-left: 7px;
+				}
+
+				&:nth-child(4){
+					margin-left: 26px;
+				}
+
+				&:nth-child(5){
+					margin-left: -28px;
+				}
+
+				&:nth-child(6){
+					margin-left: -24px;
+				}
+			}
+		}
+
+		&.row-4{
+			bottom: 12.7778%;
+			left: 4.0609%;
+
+			.item{
+				&:nth-child(3){
+					margin-left: -6px;
+				}
+
+				&:nth-child(4){
+					margin-left: -6px;
+				}
+
+				&:nth-child(5){
+					margin-left: -6px;
+				}
+
+				&:nth-child(6){
+					margin-left: -10px;
+				}
+			}
+		}
+	}
+
+	.cucumbers{
+		margin-bottom: -7px;
+	}
+
+	.jam{
+		margin-bottom: -24px;
+	}
+
+	.cherries{
+		margin-bottom: -18px;
+	}
+
+	.raspberry{
+		margin-bottom: -20px;
+	}
+
+	.vegetables{
+		margin-bottom: -7px;
+	}
+
+	.strawberry{
+		margin-bottom: -19px;
+	}
+
+	.red-wine{
+		margin-bottom: -11px;
+	}
+
+	.white-wine{
+		margin-bottom: -8px;
+	}
+
+	.box{
+		margin-bottom: -7px;
+	}
+
+	@media screen and (max-width: 1299px){
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@media screen and (max-width: 991px){
+		.row{
+			.item{
+				img{
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 991px){
+		.row{
+			&.row-1{
+				bottom: 77.2111%;
+
+				.item{
+					&:nth-child(2){
+						margin-left: 1.2690vw;
+					}
+
+					&:nth-child(3){
+						margin-left: -1.6497vw;
+					}
+
+					&:nth-child(4){
+						margin-left: 0.5076vw;
+					}
+
+					&:nth-child(5){
+						margin-left: -1.2690vw;
+					}
+
+					&:nth-child(6){
+						margin-left: -4.3147vw;
+					}
+				}
+			}
+
+			&.row-2{
+				bottom: 56.3167%;
+
+				.item{
+					&:nth-child(2){
+						margin-left: -6.4721vw;
+					}
+
+					&:nth-child(3){
+						margin-left: -0.6345vw;
+					}
+
+					&:nth-child(4){
+						margin-left: -0.3807vw;
+					}
+
+					&:nth-child(5){
+						margin-left: -0.6345vw;
+					}
+
+					&:nth-child(6){
+						margin-left: -0.5076vw;
+					}
+				}
+			}
+
+			&.row-3{
+				bottom: 35.7%;
+
+				.item{
+					&:nth-child(1){
+						margin-left: -1.9036vw;
+					}
+
+					&:nth-child(2){
+						margin-left: -1.2690vw;
+					}
+
+					&:nth-child(3){
+						margin-left: 0.8883vw;
+					}
+
+					&:nth-child(4){
+						margin-left: 3.2995vw;
+					}
+
+					&:nth-child(5){
+						margin-left: -3.5533vw;
+					}
+
+					&:nth-child(6){
+						margin-left: -3.0457vw;
+					}
+				}
+			}
+
+			&.row-4{
+				bottom: 13.8778%;
+
+				.item{
+					&:nth-child(3){
+						margin-left: -0.7614vw;
+					}
+
+					&:nth-child(4){
+						margin-left: -0.7614vw;
+					}
+
+					&:nth-child(5){
+						margin-left: -0.7614vw;
+					}
+
+					&:nth-child(6){
+						margin-left: -1.2690vw;
+					}
+				}
+			}
+		}
+
+		.cucumbers{
+			margin-bottom: -0.8883vw;
+			width: 20.0508vw;
+			height: 17.8934vw;
+		}
+
+		.jam{
+			margin-bottom: -3.0457vw;
+			width: 15.7360vw;
+			height: 17.7665vw;
+		}
+
+		.cherries{
+			margin-bottom: -2.2843vw;
+			width: 13.4518vw;
+			height: 13.8325vw;
+		}
+
+		.raspberry{
+			margin-bottom: -2.5381vw;
+			width: 13.4518vw;
+			height: 13.8325vw;
+		}
+
+		.vegetables{
+			margin-bottom: -0.8883vw;
+			width: 16.2437vw;
+			height: 14.5939vw;
+		}
+
+		.strawberry{
+			margin-bottom: -2.4112vw;
+			width: 13.4518vw;
+			height: 13.8325vw;
+		}
+
+		.red-wine{
+			margin-bottom: -1.3959vw;
+			width: 7.8680vw;
+			height: 17.0051vw;
+		}
+
+		.white-wine{
+			margin-bottom: -1.0152vw;
+			width: 7.8680vw;
+			height: 16.6244vw;
+		}
+
+		.box{
+			margin-bottom: -0.8883vw;
+			width: 28.8071vw;
+			height: 16.2437vw;
+		}
+	}
+}

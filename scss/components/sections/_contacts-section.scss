@@ -1,0 +1,146 @@
+.contacts-section{
+	padding: 75px 0 0;
+
+	.section-inner{
+		position: relative;
+		padding: 55px 0;
+		background: #000;
+
+		.section-map{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+
+			> ymaps{
+				opacity: .85;
+				width: 100% !important;
+				height: 100% !important;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+
+			@media screen and (max-width: 991px){
+				width: 150%;
+			}
+		}
+	}
+
+	.container{
+		pointer-events: none;
+	}
+
+	.contacts-block{
+		width: 370px;
+		background: #fff;
+		border-radius: $r;
+		box-shadow: $shadow;
+		pointer-events: auto;
+		z-index: 2;
+		position: relative;
+		padding: 30px;
+		font-size: 15px;
+
+		a{
+			color: inherit;
+
+			&:hover,
+			&:focus{
+				color: $primary;
+			}
+
+			&[href*="mailto"]{
+				color: $primary;
+				text-decoration: underline;
+
+				&:hover,
+				&:focus{
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	.block-caption{
+		margin-top: 20px;
+		display: flex;
+		align-items: center;
+		@include p;
+		font-weight: 600;
+		margin-bottom: 5px;
+
+		&:first-child{
+			margin-top: 0;
+		}
+
+		.caption-icon{
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background: linear-gradient(to bottom, #9fd402 0%, #7abf2f 100%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+			margin-right: 12px;
+			flex: none;
+
+			i{
+				display: block;
+			}
+
+			&:before,
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				border-radius: 50%;
+				border: 1px solid #5cb056;
+			}
+
+			&:before{
+				width: 27px;
+				height: 27px;
+				opacity: .3;
+			}
+
+			&:after{
+				width: 35px;
+				height: 35px;
+				opacity: .15;
+			}
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		.section-inner{
+			background: transparent;
+			padding-top: 0;
+
+			.section-map{
+				position: static;
+				width: 100%;
+
+				> ymaps{
+					position: static;
+					height: 400px !important;
+					opacity: 1;
+				}
+			}
+		}
+
+		.contacts-block{
+			width: 100%;
+			margin-top: -60px;
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		padding-top: 0;
+	}
+}

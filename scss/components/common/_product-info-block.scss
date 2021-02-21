@@ -1,0 +1,299 @@
+.product-info-block{
+	.block-caption{
+		@include h3;
+		margin-bottom: 20px;
+	}
+
+	.block-inner{
+		display: grid;
+		grid-template-columns: calc(100% - 270px - 30px) 270px;
+		grid-gap: 30px;
+	}
+
+	.photos-component{
+		margin-bottom: 50px;
+	}
+
+	@media screen and (max-width: 991px){
+		.block-inner{
+			grid-template-columns: 100%;
+		}
+
+		.order-form{
+			.form-inner{
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-gap: 30px;
+			}
+		}
+
+		.block-right{
+			padding-top: 30px;
+			border-top: 1px solid #ccc;
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		.order-form{
+			.form-inner{
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+}
+
+.order-form{
+	.form-footer{
+		margin-top: 20px;
+
+		.btn{
+			width: 100%;
+		}
+	}
+
+	.form-fields{
+		display: grid;
+		grid-gap: 15px;
+	}
+
+	@media screen and (min-width: 992px){
+		.size-select,
+		.product-params,
+		.product-totals{
+			margin-bottom: 25px;
+		}
+
+		.product-destination-block{
+			margin-bottom: 50px;
+		}
+	}
+
+	@media screen and (max-width: 991px){
+		.size-select{
+			grid-column: 1 / -1;
+		}
+	}
+}
+
+.product-params{
+	li{
+		display: flex;
+		position: relative;
+		justify-content: space-between;
+		font-size: 14px;
+		line-height: 1.5;
+		margin-bottom: 9px;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+
+		&:after{
+			content: '';
+			display: block;
+			width: 100%;
+			border-bottom: 1px dotted #737373;
+			position: absolute;
+			left: 0;
+			bottom: 0.35em;
+		}
+
+		.item-label{
+			background: #fff;
+			padding-right: 12px;
+			position: relative;
+			z-index: 2;
+		}
+
+		.item-value{
+			padding-left: 12px;
+			position: relative;
+			z-index: 2;
+			background: #fff;
+		}
+	}
+}
+
+.product-totals{
+	li{
+		display: flex;
+		position: relative;
+		justify-content: space-between;
+		align-items: baseline;
+		font-size: 14px;
+		line-height: 1.5;
+		margin-bottom: 10px;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+
+		.item-price{
+			font-weight: 600;
+			font-size: 22px;
+			line-height: 1;
+			font-family: $second-font;
+		}
+	}
+}
+
+.product-destination-block{
+	.block-caption{
+		font-size: 14px;
+		line-height: 1.5;
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+
+	.block-list{
+		font-size: 14px;
+		line-height: 1.5;
+
+		li{
+			margin-bottom: 5px;
+			padding-left: 15px;
+			position: relative;
+			color: #c0c0c0;
+
+			&:before{
+				content: '';
+				display: block;
+				width: 5px;
+				height: 5px;
+				border-radius: 50%;
+				background: #c0c0c0;
+				position: absolute;
+				left: 0;
+				top: 0.55em;
+			}
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+
+			&.active{
+				color: $text-color;
+
+				&:before{
+					background: $primary;
+				}
+			}
+		}
+	}
+}
+
+.product-characteristics-block{
+	font-size: 14px;
+	line-height: 1.5;
+
+	.block-caption{
+		font-size: inherit;
+		margin-bottom: 7px;
+	}
+
+	.characteristics-list{
+		columns: 2;
+		column-gap: 60px;
+		margin-bottom: -5px;
+
+		li{
+			margin-bottom: 5px;
+			padding-left: 15px;
+			position: relative;
+
+			&:before{
+				content: '';
+				display: block;
+				width: 5px;
+				height: 5px;
+				border-radius: 50%;
+				background: $primary;
+				position: absolute;
+				left: 0;
+				top: 0.55em;
+			}
+		}
+
+		@media screen and (max-width: 991px){
+			column-gap: 30px;
+		}
+
+		@media screen and (max-width: 575px){
+			columns: 1;
+		}
+	}
+}
+
+.photos-component{
+	display: grid;
+	grid-template-columns: 75px calc(100% - 25px - 75px);
+	grid-gap: 25px;
+
+	.previews-slider{
+		margin-top: 23px;
+		margin-bottom: 23px;
+
+		img{
+			display: block;
+			max-width: 100%;
+			height: auto;
+			transition: all $t;
+			cursor: pointer;
+			border: 2px solid #ededed;
+		}
+
+		.slide{
+			padding: 4px 0;
+
+			&:hover,
+			&:focus{
+				img{
+					border-color: $primary;
+				}
+			}
+		}
+
+		.slick-current{
+			img{
+				border-color: $primary;
+			}
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		grid-template-columns: 100%;
+		grid-gap: 15px;
+
+		.cmp-previews{
+			order: 2;
+		}
+
+		.previews-slider{
+			margin: 0 23px;
+
+			.slide{
+				padding: 0 4px;
+
+				img{
+
+				}
+			}
+
+			.slick-arrow{
+				height: 100%;
+
+				&.slick-prev{
+					left: -23px;
+				}
+
+				&.slick-next{
+					right: -23px;
+				}
+			}
+		}
+	}
+}
+
+.fullsize-images-slider{
+	background: #ededed;
+}
