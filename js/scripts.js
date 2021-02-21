@@ -79,24 +79,6 @@ document.addEventListener('DOMContentLoaded', function(){
 		nextArrow: '<button type="button" class="slick-next" aria-label="Следующий"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 17"><path d="M0 2l2-2 8 8.2-8 8.2-2-2 6.2-6.2L0 2z"/></svg></button>'
 	}
 
-	// $('.gallery-slider').slick({
-	// 	slidesToShow: 1,
-	// 	slidesToScroll: 1,
-	// 	arrows: true,
-	// 	dots: true,
-	// 	infinite: true,
-	// 	speed: 600,
-	// 	...arrowsButtons,
-	// 	responsive: [
-	// 		{
-	// 			breakpoint: 576,
-	// 			settings: {
-	// 				arrows: false
-	// 			}
-	// 		}
-	// 	]
-	// });
-
 	// Product photos
 	$('.photos-component').each(function(i, cmp){
 		$(cmp).find('.previews-slider').slick({
@@ -192,6 +174,8 @@ document.addEventListener('DOMContentLoaded', function(){
 		// });
 
 		$('.additional-section .legend-list .item').on('click focus', function(e){
+			$(this).addClass('current').siblings().removeClass('current');
+
 			let left = $(this).data('x') + '%';
 			let top = $(this).data('y') + '%';
 

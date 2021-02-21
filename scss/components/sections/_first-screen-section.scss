@@ -67,6 +67,16 @@
 			}
 		}
 	}
+
+	@media screen and (max-width: 575px){
+		.section-image{
+			img{
+				width: 120%;
+				margin-left: -10%;
+				margin-right: -10%;
+			}
+		}
+	}
 }
 
 .features-list{
